@@ -18,7 +18,7 @@ with st.form(key='Ticket'):
     with agend:
         agend = st.text_input('Agendista')
     with resp:
-        resp = st.selectbox('Responsavel pelo Servico',options=['Alisson','Felipe'])
+        resp = st.selectbox('Responsavel pelo Servico',options=['Felipe','Alisson'])
     ticket, tempo_conversao = st.columns(2)
     with ticket:
         ticket = st.text_input(label='N Ticket', placeholder='Informe o Numero do Ticket')
@@ -33,9 +33,9 @@ with st.form(key='Ticket'):
     
     tipo, database = st.columns(2)
     with tipo:
-        tipo = st.selectbox(label='OSD / WKM', options=['OSD', 'WKM'], index=None, placeholder='Escolha uma Opção')
+        tipo = st.selectbox(label='OSD / WKM', options=['OSD', 'WKM DESK', 'WKM WEB'], index=None, placeholder='Escolha uma Opção')
     with database:
-        database = st.multiselect(label='Database', options=['FDB','MySQL','Excel','DBF','SQL Server'], placeholder='Tipo do Banco de Dados')
+        database = st.multiselect(label='Database', options=['DBF(WKM)','FDB','MySQL','Excel','DBF','SQL Server','MDB(Access)'], placeholder='Tipo do Banco de Dados')
 
     data_entrada, data_saida = st.columns(2)
     with data_entrada:
@@ -45,7 +45,7 @@ with st.form(key='Ticket'):
 
     servico, valor = st.columns(2)
     with servico:
-        servico = st.selectbox(label='Servico', options=['Extracao de Dados','Conversao de Dados'], index=None, placeholder='Tipo de Servico')
+        servico = st.selectbox(label='Servico', options=['Extracao de Dados','Conversao de Dados','Troca de CNPJ'], index=None, placeholder='Tipo de Servico')
     with valor:
         valor = st.text_input(label='Valor do Servico', placeholder='Informe o Valor do Servico')
 
